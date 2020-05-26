@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
                                                    xmlns:app="http://schemas.android.com/apk/res-auto"
                                                    xmlns:tools="http://schemas.android.com/tools"
+                                                   xmlns:nb="http://schemas.android.com/apk/res-auto"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
                                                    tools:context=".MainActivity">
@@ -17,16 +18,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+            android:id="@+id/percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="0"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+            app:layout_constraintEnd_toEndOf="@+id/timer"
+            app:layout_constraintStart_toStartOf="@+id/timer"
+            app:layout_constraintTop_toBottomOf="@+id/timer" />
+
     <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="88dp"
             android:text="Start"
-            app:layout_constraintEnd_toEndOf="@+id/timer"
+            app:layout_constraintEnd_toEndOf="@+id/percent"
             app:layout_constraintHorizontal_bias="0.517"
-            app:layout_constraintStart_toStartOf="@+id/timer"
-            app:layout_constraintTop_toBottomOf="@+id/timer" />
+            app:layout_constraintStart_toStartOf="@+id/percent"
+            app:layout_constraintTop_toBottomOf="@+id/percent" />
 
     <Button
             android:id="@+id/reset"
@@ -39,6 +51,13 @@
             app:layout_constraintStart_toStartOf="@+id/button"
             app:layout_constraintTop_toBottomOf="@+id/button" />
 
+    <nb.visualtimer.view.SquareView
+            android:id="@+id/squareView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/percent"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
     <EditText
             android:id="@+id/time_edit_text"
             android:layout_width="0dp"
@@ -53,5 +72,5 @@
             android:inputType="number"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/timer" />
+            app:layout_constraintTop_toBottomOf="@+id/percent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
